@@ -1,0 +1,46 @@
+{% extends 'patientdb/base.html' %}
+{% load static %}
+
+{% block select2css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock select2css %}
+
+{% block content %}
+
+{% comment %} {% include "patientdb/container_start.html" with cardtitle="Dispensary DB" %} {% endcomment %}
+
+<div class="container">
+  <h3 class="text-center">Dispensary DB</h3>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'formula-list' %}" style="text-decoration: none; font-weight: normal;">Herbal Formulas</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'dispensed-add' %}">Dispense Formula</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'dispensed-list' %}">Dispensed Items</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine-pic.png' %}"><h5 class='pl-3'><a href="{% url 'herbmed-list' %}">Herbal Medicines</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/people.png' %}"><h5 class='pl-3'><a href="{% url 'patient-list' %}">Patient List</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/people.png' %}"><h5 class='pl-3'><a href="{% url 'patient-add-info' %}">New Patient</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'product-list' %}">Products</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="#">Stock Control</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'herbindication-list' %}">Herb Indications</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="{% url 'herbaction-list' %}">Herb Actions</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="#">Herb Interactions</a></h5></div>
+    <div class="myclass rounded shadow-lg grow ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'><a href="#">Reports</a></h5></div>
+  </div>
+</div>
+      
+  
+
+{% comment %} {% include "patientdb/container_end.html" %} {% endcomment %}
+
+{% endblock content %}
+
+{% block inlineformsetjs %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".myclass").click(function() {
+                location.href = $(this).find("a:first").attr("href");
+                return false;
+            });
+        });
+    </script>
+{% endblock inlineformsetjs %}

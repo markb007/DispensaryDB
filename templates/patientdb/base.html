@@ -1,0 +1,266 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"
+    crossorigin="anonymous">
+
+  {% block accounts %}
+  {% endblock %}
+
+  {% block stylesheet %}
+  <!-- <link rel="stylesheet" href="{% static 'css/accounts.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fieldset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/wrapper.css' %}">
+  <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
+  <!--load all styles -->
+  {% endblock %}
+
+
+  {% block multiselectcss %}{% endblock multiselectcss %}
+
+  {% block select2css %}{% endblock select2css %}
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+
+
+
+  <title>{% block title %}DispensaryDB{% endblock %}</title>
+</head>
+
+{% comment %}
+
+<body style="font-size: .8rem"> {% endcomment %}
+
+  <body>
+    {% block body %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-lg" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="{% url 'home' %}">Dispensary DB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Formulas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'formula-list' %}">List Formulas</a>
+              <a class="dropdown-item" href="{% url 'formula-add' %}">Add Formula</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'formula-list-settings' %}">Formula Settings</a>
+              <a class="dropdown-item" href="{% url 'formula-add-settings' %}">Add Formula Setting</a>
+              <a class="dropdown-item" href="{% url 'formula-settings-view' %}">Update Formula Settings Grid</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'dispensed-add' %}">Dispense Formula</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Patients
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'patient-list' %}">List Patients</a>
+              <a class="dropdown-item" href="{% url 'patient-add-info' %}">Add Patient</a>
+              <a class="dropdown-item" href="{% url 'patient-add-details' %}">Add Patient & History</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Edit Patient Record</a>
+              <a class="dropdown-item" href="#">Add Patient Consult</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'dispensed-list' %}">Dispensed Items</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'product-list' %}">List Products</a>
+              <a class="dropdown-item" href="{% url 'product-add' %}">Add Product</a>
+              <a class="dropdown-item" href="{% url 'product-view' %}">Update Products Grid</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'supplier-list' %}">List Suppliers</a>
+              <a class="dropdown-item" href="{% url 'supplier-add' %}">Add Supplier</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'brand-list' %}">List Brands</a>
+              <a class="dropdown-item" href="{% url 'brand-add' %}">Add Brand</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Herbal Medicines
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'herbmed-list' %}">List Herbal Medicines</a>
+              <a class="dropdown-item" href="{% url 'herbmed-add' %}">Add Herbal Medicine</a>
+              <a class="dropdown-item" href="{% url 'dispensed-list' %}">List Dispensed Items</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'herbindication-list' %}">List Herbal Indications</a>
+              <a class="dropdown-item" href="{% url 'herbindication-add' %}">Add Herbal Indication</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'herbaction-list' %}">List Herbal Actions</a>
+              <a class="dropdown-item" href="{% url 'herbaction-add' %}">Add Herbal Action</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Settings
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'formula-list-settings' %}">List Formula Settings</a>
+              <a class="dropdown-item" href="{% url 'formula-add-settings' %}">Add Formula Setting</a>
+              <a class="dropdown-item" href="{% url 'formula-settings-view' %}">Update Formula Settings Grid</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'bottlesize-list' %}">List Bottle Sizes</a>
+              <a class="dropdown-item" href="{% url 'bottlesize-add' %}">Add Bottle Sizes</a>
+              <a class="dropdown-item" href="{% url 'bottlesize-update-grid' %}">Update Bottle Size Grid</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'healthfund-list' %}">List Health Funds</a>
+              <a class="dropdown-item" href="{% url 'healthfund-add' %}">Add Health Fund</a>
+              <a class="dropdown-item" href="{% url 'healthfund-update-grid' %}">Update Health Fund Grid</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'productstrength-list' %}">List Product Strengths</a>
+              <a class="dropdown-item" href="{% url 'productstrength-add' %}">Add Product Strength</a>
+              <a class="dropdown-item" href="{% url 'productstrength-update-grid' %}">Update Product Strength Grid</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+        </ul>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav ml-auto">
+            <img src="{% static 'img/administrator-male.png' %}">
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Welcome, {{ user.first_name }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                <a class="dropdown-item" href="#">My account</a>
+                <a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a>
+                <a class="dropdown-item" href="{% url 'edit_settings' %}">Edit Settings</a>
+                <a class="dropdown-item" href="{% url 'backup' %}">Backup Database</a>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              </div>
+            </li>
+          </ul>
+          {% else %}
+          <form class="form-inline ml-auto">
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+            <a href="{% url 'register' %}" class="btn btn-primary ml-2">Sign up</a>
+          </form>
+
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar is fixed so pad to start of next container -->
+    <div class="padit">
+    </div>
+
+    <div class="container">
+      <!-- we need javascript active - this message will be removed onload if it is active otherwise it will display -->
+      <div id="jsEnabled" class="alert alert-danger" role="alert">
+        <button class="close" data-dismiss="alert">
+          <small><sup>x</sup></small>
+        </button>
+        This site requires <u>Javascript</u> to be active to provide full functionality. Please enable and reload the
+        page
+      </div>
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissable" role="alert">
+        <button class="close" data-dismiss="alert">
+          <small><sup>x</sup></small>
+        </button>
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+
+
+      {% block content %}
+      {% endblock content %}
+
+    </div>
+
+    {% endblock body %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+      integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"
+      crossorigin="anonymous"></script>
+    {% comment %}
+    <!-- <script defer src="{% static 'fontawesome/js/all.js' %}"></script> -->
+    <!--load all styles --> {% endcomment %}
+
+    {% block select2js %}{% endblock select2js %}
+    {% block multiselectjs %}
+    {% endblock multiselectjs %}
+    
+    <script>
+
+      $('[data-toggle="datepicker"]').datepicker({
+        format: 'dd/mm/yyyy',
+        autoHide: true,
+        zIndex: 2048,
+      });
+
+      //    if javascript is enabled then remove warning message
+      $('#jsEnabled').hide();
+      // enable tooltip on pages
+      $('[data-toggle="tooltip"]').tooltip(); 
+
+    </script>
+    
+    {% block inlineformsetjs %}
+    {% endblock inlineformsetjs %}
+
+    {% block labelprintjs %}
+    {% endblock labelprintjs %}
+
+    {% block modaljs %}
+    {% endblock modaljs %}
+
+
+  </body>
+
+</html>

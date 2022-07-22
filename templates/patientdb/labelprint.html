@@ -1,0 +1,32 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="Print Labels Demo" %}
+
+    <h2>Print DYMO label</h2>
+ 
+    <div id="printDiv">
+        <button id="printKnop">Print LABEL</button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+        <img id="labelImage" src="" />
+    </div>
+    <br />
+    <br />
+    <div>
+        <img id="labelImage2" src="" />
+    </div>
+
+    {% include "patientdb/container_end.html" %}
+
+{% endblock %}
+
+{% block labelprintjs %}
+    <script src="http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.latest.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="{% static 'js/PrintLabel.js' %}"></script>
+{% endblock labelprintjs %}

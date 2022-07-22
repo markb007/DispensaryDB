@@ -1,0 +1,9 @@
+/* Edge fix */
+.dropdown-menu,
+.dropdown-menu ul {
+  list-style-type:none;
+}
+
+.content-box {
+  column-count: 3;
+}

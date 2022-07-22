@@ -1,0 +1,20 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Add Patient Contact Info" %}
+
+        <div class="card card-body bg-light shadow">
+              {# document: novalidate required to have error messages for missing fields appear below fields in red #}
+              <form method="POST" novalidate>
+
+                  {% crispy form %}
+                  <input type="submit" value="Add Patient" class="btn btn-primary btn-block">
+              </form>
+        </div>  
+
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}

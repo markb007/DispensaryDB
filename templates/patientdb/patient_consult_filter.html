@@ -1,0 +1,74 @@
+{% extends "patientdb/base.html" %}
+{% load humanize %}
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="List/Search Patient Consults" %}
+    {% load widget_tweaks %}
+    <br />
+    <form class="form-inline my-2 my-lg-0">
+      {% csrf_token %}
+      <div class="card card-body bg-light">
+          <h4 style="margin-top: 0">Filter</h4>
+          <div class="row">
+            <div class="form-group col-sm-4 col-md-3">
+              {{ filter.form.patient_consult__first_name.label_tag }}
+              {% render_field filter.form.patient_consult__first_name class="form-control" %}
+            </div>
+            <div class="form-group col-sm-4 col-md-3">
+                    {{ filter.form.patient_consult__last_name.label_tag }}
+                    {% render_field filter.form.patient_consult__last_name class="form-control" %}
+                  </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4 col-md-3">
+                {{ filter.form.modified.label_tag }}
+                {% render_field filter.form.modified class="form-control" %}
+            </div>
+            <div class="form-group col-sm-4 col-md-3">
+                {{ filter.form.summary.label_tag }}
+                {% render_field filter.form.summary class="form-control" %}
+              </div>
+        </div>
+        <div class="row">
+            <h5></h5>
+            <div class="form-group col-sm-4 col-md-3">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+            </div>
+        </div>
+      </form>
+    </form>
+
+    <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Summary</th>
+                <th>Consult Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for patientconsult in filter.qs %}
+                <tr>
+                  <td>{{ patientconsult.patient_consult__first_name }}</td>
+                  <td>{{ patientconsult.patient_consult__last_name }}</td>
+                  <td>{{ patientconsult.summary }}</td>
+                  <td>{{ patientconsult.modified }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5">No data</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {{ filter.qs }}
+    {% include 'patientdb/paginate_list.html' %}
+
+    {% include "patientdb/container_end.html" %}
+
+    {{ debug }}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    {% include "patientdb/container_start.html" with cardtitle="Add Patient" %}
+    {# document: novalidate required to have error messages for missing fields appear below fields in red #}
+    <form method="POST" novalidate>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">History</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="consults-tab" data-toggle="tab" href="#consults" role="tab" aria-controls="consults" aria-selected="false">Consult History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="consultnew-tab" data-toggle="tab" href="#consultnew" role="tab" aria-controls="consultnew" aria-selected="false">Consult New</a>
+                </li>
+        </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                        <br />
+                        
+                            {% crispy form %}
+                            
+                </div>
+                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+                        {% for formset in inlines %}
+                            {% crispy formset %}
+                        {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="consults" role="tabpanel" aria-labelledby="consults-tab">Consult History</div>
+                <div class="tab-pane fade" id="consultnew" role="tabpanel" aria-labelledby="consultnew-tab">New consult</div>
+              </div>     
+            <input type="submit" value="Add Patient" class="btn btn-primary btn-block">
+        </form>   
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}

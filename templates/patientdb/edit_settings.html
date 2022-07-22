@@ -1,0 +1,23 @@
+{% extends 'patientdb/base.html' %}
+{% load static %}
+
+{% block accounts %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "patientdb/container_start.html" with cardtitle="Edit Settings" %}
+<div class="card card-body bg-light shadow">
+      <form method="POST" novalidate action="{% url 'edit_settings' %}">
+          {% csrf_token %}
+          
+          {% include 'patientdb/form.html' %}
+
+          <input type="submit" value="Save Settings" class="btn btn-primary">
+      </form>
+    </div>
+{% include "patientdb/container_end.html" %}
+
+
+{% endblock content %}

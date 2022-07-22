@@ -1,0 +1,17 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Add Bottle Size" %}
+        <div class="card card-body bg-light shadow">
+              <form method="POST">
+                  {% csrf_token %}
+
+                  {% include 'patientdb/form.html' %}
+
+                  <input type="submit" value="Add Bottle Size" class="btn btn-primary btn-block">
+              </form>
+        </div>       
+        {% include "patientdb/container_end.html" %}
+       
+{% endblock %}

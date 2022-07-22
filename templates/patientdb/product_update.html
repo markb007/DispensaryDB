@@ -1,0 +1,33 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block multiselectcss %}
+    {{ form.media.css }}
+{% endblock multiselectcss %}
+
+{% block select2css %}
+    <link rel="stylesheet" href="{% static 'css/select2.css' %}">
+{% endblock select2css %}
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Update Product Info" %}
+        <div class="card card-body bg-light shadow">
+            <form method="POST" novalidate>
+                {% csrf_token %}
+
+                <!-- {% include 'patientdb/form.html' %} -->
+                {% crispy form %}
+                
+                <input type="submit" value="Save Changes" class="btn btn-primary btn-block">
+            </form>
+        </div>  
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}
+
+{% block multiselectjs %}
+    {{ form.media.js }}
+{% endblock multiselectjs %}

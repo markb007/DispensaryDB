@@ -1,0 +1,47 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Update Health Fund Grid" %}
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {% if formset.non_field_errors or formset.non_form_errors%}
+                    <div class="alert alert-danger alert-dismissable" role="alert">
+                        <button class="close" data-dismiss="alert">
+                            <small><sup>x</sup></small>
+                        </button>
+                        {{ formset.non_field_errors }}
+                        {{ formset.non_form_errors }}
+                    </div>
+                {% endif %}
+                {{ formset.management_form }}
+                {% for form in formset %}
+                     {{ form.id }}
+                    {# labels display with first occurrence only #}
+                    
+                    {% if forloop.first %}  
+                    <br />
+                        <div class="form-row font-weight-bold alert alert-info shadow">
+                            <div class='form-group col-md-4 mb-0'>Health Fund</div>
+                            <div class='form-group col-md-4 mb-0'>Provider No.</div>
+                        </div>
+                        <br />
+                        <!-- {% for field in form %}
+                            {{ field.label_tag }}
+                        {% endfor %} -->
+                        {% comment %} {% crispy form %}
+                    {% else %} {% endcomment %}
+                    {% endif %}
+                    {% crispy form form.newhelper %}
+                    
+
+                {% endfor %}
+            
+                <input type="submit" value="Update Health Funds" class="btn btn-primary btn-block">
+            </form>
+
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}

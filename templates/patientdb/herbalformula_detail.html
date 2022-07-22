@@ -1,0 +1,96 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+
+{% include "patientdb/container_start.html" with cardtitle="Formula Details" %}
+            <div class="form-row font-weight-bold alert alert-info shadow">  
+                    <h5>Formula Code: <b>{{ formula.formula_code }}</b></h5>
+            </div>
+                <table class="table table-responsive">
+                        <thead class="thead-inverse">
+                          <tr>
+                            <th>Product Name</th>
+                            <th>Product Code</th>
+                            <th>Quantity</th>
+                            <th>Created</th>
+                            <th>Modified</th>
+                            <th>Update</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for ingredient in ingredients %}
+                            <tr>
+                                <td>{{ ingredient.product }}</td>
+                                <td>{{ ingredient.product.product_code }}</td>
+                                {# integer or float depending on formula type #}
+                                {% if formula.formula_type in "MP" %}
+                                    <td>{{ ingredient.quantity|floatformat:2 }}</td>
+                                {% else %}
+                                    <td>{{ ingredient.quantity }}</td>
+                                {% endif %}
+                                <td>{{ ingredient.created }}</td>
+                                <td>{{ ingredient.modified }}</td>
+                                <td><a class="btn-sm btn-info" role=button href="{% url 'formula-list' %}">U</a></td>
+                            </tr>
+                            {% endfor %}
+                            
+                           <tr>
+                            <td></td>
+                            <td>Total</td>
+                            {% if formula.formula_type in "MP" %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform|floatformat:2 }}</span></td>
+                            {% else %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform }}</span></td>
+                            {% endif %}
+                            {# formula type determines whether mls, % or drops displayed #}
+                            {% if formula.formula_type in "M" %}
+                                <td>mls</td>
+                            {% elif formula.formula_type in "P" %}
+                                <td>%</td>
+                            {% elif formula.formula_type in "D" %} 
+                                <td>drops</td>
+                            {% else %}
+                                <td>total mls</td>
+                            {% endif %}
+                            <td></td>
+                         </tr>
+                        </tbody>
+                </table>  
+                <br />
+                <div class="form-row font-weight-bold alert alert-info shadow">  
+                    <h5>Dispensed To:</h5>
+                </div>
+                <br />
+                <table class="table table-responsive">
+                    <thead class="thead-inverse">
+                      <tr>
+                        <th>Patient Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Date</th>
+                        <th>Dispense</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for patient in patients %}
+                        <tr>
+                            <td>{{ patient.patient.first_name }} {{ patient.patient.last_name }}</td>
+                            <td>{{ patient.patient.address_1 }}</td>
+                            <td>{{ patient.patient.city }}</td>
+                            <td>{{ patient.patient.email }}</td>
+                            <td>{{ patient.patient.mobile }}</td>
+                            <td>{{ patient.modified }}</td>
+                            {# patient.id on the following link is the 'dispensed item id' not the patient id #}
+                            <td><a class="btn-sm btn-info" role=button href="{% url 'dispensed-preadd' formula.formula_id patient.patient.patientid patient.id %}">R</button></a></td> 
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>  
+          
+{% include "patientdb/container_end.html" %}
+
+{% endblock %}
+

@@ -1,0 +1,137 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+
+      {% include "patientdb/container_start.html" with cardtitle="Herbal Formula List New" %}
+          <br />
+          <div class="card card-body bg-light">
+            <form class="form-inline my-2 my-lg-0">
+                {% csrf_token %}
+
+                <!-- <div class="form-control">
+                  <div class="row">
+                  <input type="search" class="form-control" placeholder="Search Formulas " value="" name="s" title="Search for:" autocomplete="off">
+                  
+                  <button type="submit" class="searchButton form-control">
+                    <i class="fa fa-search">Search</i>
+                  </button>
+                  </div>
+                </div>  --> 
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                              <div class="input-group" id="adv-search">
+                                  <input type="text" class="form-control" placeholder="Search for snippets" />
+                                  <div class="input-group-btn">
+                                      <div class="btn-group" role="group">
+                                          <div class="dropdown dropdown-lg">
+                                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                              <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                  <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                      <label for="filter">Filter by</label>
+                                                      <select class="form-control">
+                                                          <option value="0" selected>All Snippets</option>
+                                                          <option value="1">Featured</option>
+                                                          <option value="2">Most popular</option>
+                                                          <option value="3">Top rated</option>
+                                                          <option value="4">Most commented</option>
+                                                      </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="contain">Author</label>
+                                                      <input class="form-control" type="text" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="contain">Contains the words</label>
+                                                      <input class="form-control" type="text" />
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                  </form>
+                                              </div>
+                                          </div>
+                                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="form-group">
+                        <select name="datefilter" class="custom-select mt-2"> 
+                            <option value="Not Selected" selected>Select Date Filter</option> 
+                            {% for i in options %}
+                              <option value="{{ i }}">{{ i }}</option> 
+                            {% endfor %}
+                        </select> 
+
+                        <select name="sortfilter" class="custom-select mt-2"> 
+                            <option value="Not Selected" selected>Select Sort Filter</option> 
+                            {% for i in options %}
+                              <option value="{{ i }}">{{ i }}</option> 
+                            {% endfor %}
+                        </select> 
+                    </div>
+                </div>
+                  <br />
+                    <div class="container mt-2">
+                        
+                        <span>Result set: {{ paginator.count }}</span>
+                    </div>
+              
+                
+            </form>
+          </div>  
+              <br />
+            <form class="form-inline my-2 my-lg-0"> 
+                {% csrf_token %}
+              <select name="sub" class="custom-select col-3"> 
+                  <option value="Not Selected" selected>Select Action</option> 
+                  {% for i in options %}
+                    <option value="{{ i }}">{{ i }}</option> 
+                  {% endfor %}
+              </select> 
+                <br />
+                <br />
+                <br />
+            <div class="table-responsive">
+              <table class="table">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th>Select</th>
+                      <th>Formula Code</th>
+                      <th>No.Patients</th>
+                      <th>Times Dispensed</th>
+                      <th>Modified</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- context data is in model class name _list, or object_list -->
+                      {% for formula in herbalformula_list %}
+                      <tr>
+                          <td>
+                              <div class="form-check-inline">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optselect" value="{{ formula.pk }}">
+                                  </label>
+                                </div>
+                          </td>
+                          <td><a href="{% url 'formula-detail' formula.pk %}">{{ formula.formula_code }}</a></td>   
+                          <td class='text-center'>{{ formula.patients }}</td>   
+                          <td class='text-center'>{{ formula.dispensed }}</td>   
+                          <td>{{ formula.modified }}</td> 
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+              <button class="btn btn-primary">Submit Action</button>
+            </form>
+        {% include 'patientdb/paginate_list.html' %}
+      </div>
+
+    {% include "patientdb/container_end.html" %}
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+
+    <h1>Formset View</h1>
+    <br />
+    <div class="container"></div>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form.as_p}}
+                <hr />
+            {% endfor %}
+
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+{% endblock %}

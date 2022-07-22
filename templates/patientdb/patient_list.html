@@ -1,0 +1,133 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% load humanize %}
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="List Patients" %}
+
+    <br />
+    <div class="card card-body bg-light shadow">
+      <form>
+        {% csrf_token %}
+        {% url 'patient-list' as link %}
+        {% include "patientdb/search_include_extra.html" with msg="Search Patient List" reset=link %}
+        <div class="row">
+            <div class="col-md-6 mt-2">
+              <label for="datefilter">Date Filter</label>
+      
+              <select name="optdate" class="custom-select" id="optdate">
+                <option value="0" {% if datefilter == "0" or datefilter == ""%} selected {% endif %}>Choose date filter ...</option>
+                <option value="1" {% if datefilter == "1" %} selected {% endif %}>Today</option>
+                <option value="2" {% if datefilter == "2" %} selected {% endif %}>This week</option>
+                <option value="3" {% if datefilter == "3" %} selected {% endif %}>Last week</option>
+                <option value="4" {% if datefilter == "4" %} selected {% endif %}>This month</option>
+                <option value="5" {% if datefilter == "5" %} selected {% endif %}>Last month</option>
+                <option value="6" {% if datefilter == "6" %} selected {% endif %}>This year</option>
+                <option value="7" {% if datefilter == "7" %} selected {% endif %}>Last year</option>
+              </select>
+            </div>
+            <div class="col-md-6 mt-2">
+              <label for="sortfilter">Sort Filter</label>
+      
+              <select name="optsort" class="custom-select" id="optsort">
+                <option value="0" {% if sortfilter == "0" or sortfilter == "" %} selected {% endif %}>Choose sort filter ...</option>
+                <option value="1" {% if sortfilter == "1" %} selected {% endif %}>Last Name</option>
+                <option value="2" {% if sortfilter == "2" %} selected {% endif %}>First Name</option>
+                <option value="3" {% if sortfilter == "3" %} selected {% endif %}>City</option>
+                <option value="4">Postcode</option>
+              </select>
+            </div>
+      
+          </div>
+        <!-- {% include 'patientdb/datesearch.html' %}
+        {% include 'patientdb/fieldsort.html' %} -->
+      </form>
+    </div>
+
+    <!-- Action drop down -->
+    <div class="row">
+     <div class="col-4"> 
+        <div class="dropdown dropright mt-3 mb-3">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Patient Action
+            </button>
+            <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a id="actionPatientDetail" class="dropdown-item" href="{% url 'patient-update-details' 0 %}">Update Patient History</a>
+              <a id="actionPatientInfo" class="dropdown-item" href="{% url 'patient-update-info' 0 %}">Update Patient Contact</a>
+              <a id="actionConsultHistory" class="dropdown-item" href="{% url 'patient-update-info' 0 %}">View Consult History</a>
+              <a id="actionNewConsult" class="dropdown-item" href="{% url 'patient-update-info' 0 %}">New Patient Consult</a>
+              <a id="actionDispenseHistory" class="dropdown-item" href="{% url 'dispensed-patientlist' 0 %}">View Herbal Dispensing History</a>
+              <a id="actionPatientFormulas" class="dropdown-item" href="{% url 'formula-patient-list' 0 %}">View Patient Formulas</a>
+            </div>
+        </div>  
+      </div>
+      <div class="col-6">
+      </div>
+      <div class="col-2">
+          <div class="mt-2 mb-2">
+              <p class="float-right">
+                <a href="{% url 'patient-add-info' %}" data-toggle="tooltip" title="Add New Patient Contact Info">
+                      <span style="font-size: 36px; color: #00a2ff;">
+                        <i class="fas fa-plus-circle"></i>
+                    </span>
+                </a>
+              </p>
+          </div>
+      </div>
+    </div>  
+
+    {% include "patientdb/radioMessage.html" %}
+
+  <div class="table-responsive shadow">
+    <table class="table table-hover table-striped">
+        <thead class="alert alert-info shadow">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postcode</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Modified</th>
+            <!-- <th>Update Detail</th> -->
+          </tr>
+        </thead>
+        <tbody>
+            <!-- context data is in model class name _list, or object_list -->
+            {% for patient in patient_list %}
+            <tr>
+                <td>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio"
+                        value="{{ patient.pk}}/" id="defaultCheck1" name="checkRadio">
+                    </div>
+                </td>
+                <td><a href="{% url 'patient-update-info' patient.pk %}">{{ patient.first_name }}</a></td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.address_1 }}</td>
+                <td>{{ patient.city }}</td>
+                <td>{{ patient.postcode }}</td>
+                <td>{{ patient.mobile }}</td>
+                <td>{{ patient.email|truncatechars:20 }}</td>
+                <td>{{ patient.modified|naturaltime }}</td>
+<!--                 <td><a class="btn-sm btn-info" role=button href="{% url 'patient-update-details' patient.pk %}">U</button></a></td> 
+ -->              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+    {% include 'patientdb/paginate_list.html' %}
+  </div>
+  
+    {% include "patientdb/container_end.html" %}
+
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/patientlist.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}

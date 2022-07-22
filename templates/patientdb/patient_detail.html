@@ -1,0 +1,25 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+    <h1>Patient Detail</h1>
+    <br />
+
+    {{ patient.first_name}} {{ patient.last_name }}<br />
+    
+    {% if patient.patientdetail %}
+      {{ patient.patientdetail.allergies }}
+    {% else %}
+      <p>No detail record exists</p>
+    {% endif %}
+    <br />
+   
+    {% for item in patient.consultdetails.all %}
+         {{ item.summary }}
+         <br />
+         {{ item.details }}
+         <br />
+    {% empty %}
+      <p>No patient consult records exist</p>
+    {% endfor %}
+    <p>Length = {{ patient.consultdetails.all|length }}</p>
+{% endblock %}

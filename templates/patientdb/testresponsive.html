@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Grid Layouts for Large Devices</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    /* Some custom styles to beautify this example */
+    .myclass {
+        display:flex;
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <h2 class="text-center my-3">Bootstrap Responsive Layout</h2>
+	<div class="text-center">Open the output in a new blank tab (Click the arrow next to "Show Output" button) and resize the browser window to understand how the Bootstrap responsive grid system works.</div>
+    <div class="container">
+            {% comment %} <div class="row justify-content-md-center"> {% endcomment %}
+            <div class="row justify-content-md-center">
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Herbal Formulas</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Dispense Formula</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Dispensed Items</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine-pic.png' %}"><h5 class='pl-3'>Herbal Medicines</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/people.png' %}"><h5 class='pl-3'>Patient Details</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/people.png' %}"><h5 class='pl-3'>Patient Consults</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Products</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Stock Control</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'>Reports</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'> Herbal Indications</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'> Herbal Actions</h5></div>
+                <div class="myclass ml-3 mb-3 mr-3 col-lg-4 col-md-6 col-xl-3 bg-info"><img align='left' src="{% static 'img/herbal-medicine.png' %}"><h5 class='pl-3'> Herbal Formulas</h5></div>
+            </div> 
+        </div>
+</body>
+</html>                            

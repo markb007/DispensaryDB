@@ -1,0 +1,74 @@
+{% load pagetags %}
+    
+    {% if is_paginated %}
+      <nav aria-label="List pagination" class="mb-4">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <!-- first -->
+                <li class="page-item">
+                    <a title="Start" class="page-link" href="?{% param_replace page=1 %}">&laquo;</a>
+                </li>
+                <!-- previous -->
+                <li class="page-item">
+                    <!-- <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a> -->
+                    <a title="Previous" class="page-link" href="?{% param_replace page=page_obj.previous_page_number %}">&lsaquo;</a>
+                </li>
+            {% else %}
+                <!-- first -->
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;</span>
+                </li>
+                <!-- previous -->
+                <li class="page-item disabled">
+                    <span class="page-link">&lsaquo;</span>
+                </li>
+            {% endif %}
+
+            {% if page_obj.number|add:'-4' > 1 %}
+            <!-- <li><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">...</a></li> -->
+            <li><a class="page-link" href="?{% param_replace page=page_obj.number|add:'-5' %}">...</a></li>
+            {% endif %}
+
+            {% for page_num in paginator.page_range %}
+                {% if page_obj.number == page_num %}
+                    <li class="page-item active">
+                    <span class="page-link">
+                        {{ page_num }}
+                        <span class="sr-only">(current)</span>
+                    </span>
+                    </li>
+                {% elif page_num > page_obj.number|add:'-4' and page_num < page_obj.number|add:'4' %}
+                    <li class="page-item">
+                    <a class="page-link" href="?{% param_replace page=page_num %}">{{ page_num }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+    
+            {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                <!-- <li><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">...</a></li> -->
+                <li><a class="page-link" href="?{% param_replace page=page_obj.number|add:'5' %}">...</a></li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <!-- next -->
+                <li class="page-item">
+                    <!-- <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a> -->
+                    <a title="Next" class="page-link" href="?{% param_replace page=page_obj.next_page_number %}">&rsaquo;</a>
+                </li>
+                <!-- last -->
+                <li class="page-item">
+                    <a title="Last" class="page-link" href="?{% param_replace page=paginator.num_pages %}">&raquo;</a>
+                </li>
+            {% else %}
+                <!-- next -->
+                <li class="page-item disabled">
+                    <span class="page-link">&rsaquo;</span>
+                </li>
+                <!-- last -->
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;</span>
+                </li>
+            {% endif %}
+        </ul>
+      </nav>
+    {% endif %} 

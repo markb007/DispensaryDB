@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DieCutLabel Version="8.0" Units="twips">
+	<PaperOrientation>Landscape</PaperOrientation>
+	<Id>LargeShipping</Id>
+	<IsOutlined>false</IsOutlined>
+	<PaperName>30256 Shipping</PaperName>
+	<DrawCommands>
+		<RoundRectangle X="0" Y="0" Width="3331" Height="5715" Rx="270" Ry="270" />
+	</DrawCommands>
+	<ObjectInfo>
+		<ImageObject>
+			<Name>GRAPHIC</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<Image>iVBORw0KGgoAAAANSUhEUgAAAkoAAAF4CAYAAACredaiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAB09SURBVHhe7d178G1z/T/w5Vd/mO8QykyKkcJEc4QQI6Iac9yZaQy6OWZEKtPdNVON65FmarowLkMxYWiQcumGyCUqSmjQIDXMKEQz/jDjd57Lfh/77LNfn9v5HOf2eMzsWXuvvfZa77X2x3k/vd/v9d6rvbxABwDAYv7fYAkAwAhBCQCgICgBABQEJQCAgqAEAFBYru56W2211QbPgHBTKsCytdwFpUcffXTwClZtG220kaAEsIzpegMAKAhKAAAFQQmW0DPPPNPdeOON3Te/+c3+OQArj1VqjNIDDzzQ3Xzzzd19993X/fe//+3X7bjjjt2ee+7Zbbjhht3ZZ5/dfepTn+rXz5ZUnn/5y18Gr1513HHHdZtvvnn/fHSblOXkk08evFr2Hn/88e7WW2/tbrvttv66veENb+jmzp3b7bPPPn0wuO6667qPfOQjg61XLddcc0131FFH9c/f9ra39X9fs8UYJYBlb5VoUbrrrru6T3ziE90ee+zRPfHEE30ln8otj+eff76v8PN+gsBs23vvvbvdd9+9++1vf9s/EjJy3PXWW2+wRdftuuuu3WOPPda/H/vtt19fAadMCXfLSkLQV7/61e79739/d//99y+8bh/+8Ie7yy+/vNtll126/ffff2HoXBXttNNO3QUXXNA/33nnnfslACuPlb5F6cc//nF3/PHHd+9+97u7733ve31rzaiEkYSoY489dtZblJq0DsSf/vSnbp111umfD0voSEXbWpI++9nPdj/72c+6U089dWxrTVp5Hnnkke4DH/jAYM3sSrg87LDD+ueXXnrpwtavYa2MCU3bbbfdYO2qJ91uhx56aPfd7363D92zRYsSwLK3UrcopUurhaQf/vCHY0NSJASk5WebbbYZrFl6xoWkdPml22a4u+2kk07qA0jVpZWWnuFWqdmUkHTAAQf0z6uQFIcccki/3GSTTfrlquruu+/ul1tuuWW/BGDlsdIGpfxf/ve///1urbXW6kPSuIAyLEFlabeKJLCNSjnPOuus7jvf+c5gzStS3nHlad1h9957bxlglkT231qSvv3tb094jJQv122ya7uy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yy7dvHnzBmuWvkw4CbzKhJMAs+vCCy/sbr755inP0F22KC0LqRQ8PDxefQCwbC1XQQkAYHkiKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAABUEJAKAgKK2Abr311u6MM87olwDA0rPcBqUEgXGPSy+9dLDFquu2227rjjnmmH457O9///vC67Q8WJ7KAgAzsdrLCwyeL+LQQw/tdtlll27evHmDNa+t1VZbbfBsUXPnzu2uv/76watVU8JHgtL8+fO7o48+erD2lZamnXfeuX9efK2vqfYdLg9lAYC48MILu5tvvrm74IILBmsmtty2KCUE5LHxxhv3rxOQ8npZBbcVwVvf+taF1w0AWHLLbVBKS0kem2yySf/6gx/8YP/6oIMO6l+zuHe84x0LrxsAsORe9/UFBs8XcfXVV3cbbbRRt9VWWw3WLBsXX3xx98gjj3S77bZb9773vW+w9lXphvrd73638L177723L/tvfvOb7h//+Ef3lre8pfu///u//r2JXHvttd2VV17Z7+u5557rNt100348VNZnH+uss85gy1e6uPJeupQ23HDDft3w54fXNxk/dMMNN/TbDR9jMu1Y+UzOJ+dy//33d7/61a8WuyY5xrnnnttvN2fOnMHaxU2nLDO5vq3MKWPk/eyjPcZdn+H9tjK97nWvW+S6D2vlmuxcAWDYPffc0z322GPd/vvvP1gziQWV1ljz5s17+YILLhi8Wnbmzp2bAS4vz58/f7BmUXkvjwVhauG2w48FFe3Lt9xyy2Drxf385z/vtxn3ubZ+9PMpS9Znmfc23njjRT47XNann3765SOPPHKR99sjn1vwhQ22XFTWb7vttuXnshy9JilL1uc6jDOTsrT3p3N92/WpHsPlzjHH7bc9Ut5x2vvVuQLAOMk2yThTtdwO5m523333vvVjQeU6tkupDRheUGF3zzzzTHfggQd273nPe/p155xzTt8alfceeuih7k1velO/vkmLyl577dU/z1ioww8/vH/+6KOPdr/4xS/6z8aCINDttNNO/fNog6nzmWyTZY671lpr9e/vuOOOC7ffbrvturvvvrsvQ7oN00oXl19+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ACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAAVBCQCgICgBABQEJQCAgqAEAFAQlAAACoISAEBBUAIAKAhKAAAFQQkAoCAoAQAUBCUAgIKgBABQEJQAAAqCEgBAQVACACgISgAAhTIorbHGGt0LL7wweAUAsOopg9L666/fPfXUU4NXAAArvpdeeqlbffXVB68mVwalDTbYoHviiScGrwAAVnzJNmkMmqoJg9KTTz45eAUAsOJLb1kyzlSVQWnOnDndPffc0zdRAQCsDO64445u2223HbyaXBmU1l133W6zzTbrbrrppsEaAIAV18MPP9zfqJbGoKkqg1Lst99+3WWXXTZ4BQCw4rr00ku7vffee/BqalZ7eYHB88VkwNMWW2zRPfDAA9166603WAsAsGJ58cUXu7e//e3ddddd12211VaDtZObsEUpg53mzZvXnXjiiYM1AAArnjPPPLPbYYcdphWSYsIWpXj66ae7zTffvLvxxhun1acHALA8yF386SG75ZZb+vHX0zFhi1JkUPdJJ53UHXDAAWbqBgBWKLl7/+CDD+4OO+ywaYekmLRFqTnyyCP7MUvXXHPNYA0AwPLtqKOO6h599NHuyiuv7F7/+tcP1k7dlINSEtkee+zRj1s699xzZ3QwAIDXSsZYX3XVVd3tt9/e/4btTEza9dYkGKU1KYFp5513Nms3ALBcylChffbZp59cMuOSZhqSYspBKfIjchdddFG31157dVtvvXV33nnnmbkbAFhuXHHFFX1G2WijjfqpANZee+3BOzMz5a63Ufl5k2984xvdgw8+2J1wwgnd/vvvv0SJDQBgJjJH0vXXX9/Nnz+/b9T52te+1u26666Dd5fMjINSk584Of/88/sCZm6CzOadO+UyQWXGMxnLBADMpgzOzvRFGQb061//urv11lu7nXbaqTvkkEP6hpvZtMRBqWlp7oYbbugLn0dOBABgNqUhJo0yeeyyyy5LtVdr1oISAMDKZlqDuQEAViWCEgBAQVACACgISgAABUEJAKAgKAEAFAQlAICCoAQAUBCUAAAKghIAQEFQAgAoCEoAAGN13f8HPFksojLVTeMAAAAASUVORK5CYII=</Image>
+			<ScaleMode>Uniform</ScaleMode>
+			<BorderWidth>0</BorderWidth>
+			<BorderColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<HorizontalAlignment>Center</HorizontalAlignment>
+			<VerticalAlignment>Center</VerticalAlignment>
+		</ImageObject>
+		<Bounds X="336" Y="57" Width="5338" Height="3192" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_1</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>None</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 1</String>
+					<Attributes>
+						<Font Family="Arial" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1236" Y="825" Width="2700" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_2</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>None</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 2</String>
+					<Attributes>
+						<Font Family="Arial" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1243.5" Y="1057.5" Width="2722.5" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_3</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>None</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 3</String>
+					<Attributes>
+						<Font Family="Arial" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1251" Y="1305" Width="2677.5" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_4</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>None</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 4</String>
+					<Attributes>
+						<Font Family="Arial" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1243.5" Y="1552.5" Width="2745" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_5</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 5</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1251" Y="1785" Width="2542.5" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_6</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 6</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1251" Y="1995" Width="2842.5" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_7</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 7</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1251" Y="2220" Width="2617.5" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_8</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 8</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1236" Y="2422.5" Width="2820" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_9</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 9</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1243.5" Y="2619" Width="2595" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>HERB_10</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>ShrinkToFit</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Ingredient 10</String>
+					<Attributes>
+						<Font Family="Arial" Size="12" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="1243.5" Y="2820" Width="2460" Height="232.5" />
+	</ObjectInfo>
+	<ObjectInfo>
+		<TextObject>
+			<Name>DOSE_1</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>False</IsVariable>
+			<GroupID>-1</GroupID>
+			<IsOutlined>False</IsOutlined>
+			<HorizontalAlignment>Left</HorizontalAlignment>
+			<VerticalAlignment>Top</VerticalAlignment>
+			<TextFitMode>None</TextFitMode>
+			<UseFullFontHeight>True</UseFullFontHeight>
+			<Verticalized>False</Verticalized>
+			<StyledText>
+				<Element>
+					<String xml:space="preserve">Dose 1</String>
+					<Attributes>
+						<Font Family="Arial" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+						<ForeColor Alpha="255" Red="0" Green="0" Blue="0" HueScale="100" />
+					</Attributes>
+				</Element>
+			</StyledText>
+		</TextObject>
+		<Bounds X="4099" Y="832.5" Width="1042.5" Height="232.5" />
+	</ObjectInfo>
+</DieCutLabel>

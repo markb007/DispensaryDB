@@ -1,0 +1,23 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="Add Patient with Detail History" %}
+    {# document: novalidate required to have error messages for missing fields appear below fields in red #}
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {% crispy form %}
+        
+        {% for formset in inlines %}
+            <div class="alert alert-primary" role="alert">
+                Patient History
+            </div>
+            {% crispy formset %}
+        {% endfor %}
+        
+        <input type="submit" value="Add Patient & Detail" class="btn btn-primary btn-block">
+    </form>
+
+    {% include "patientdb/container_end.html" %}
+
+{% endblock content %}

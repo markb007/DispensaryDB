@@ -1,0 +1,32 @@
+{% extends "patientdb/base.html" %}
+
+{% load static %}
+
+{% block multiselectcss %}
+    {{ form.media.css }}
+{% endblock multiselectcss %}
+
+{% block select2css %}
+    <link rel="stylesheet" href="{% static 'css/select2.css' %}">
+{% endblock select2css %}
+
+{% block content %}
+    
+      {% include "patientdb/container_start.html" with cardtitle="Update Herb Actions" %}
+
+            <form method="POST">
+                {% csrf_token %}
+
+                {% include 'patientdb/form.html' %}
+
+                <input type="submit" value="Save" class="btn btn-primary btn-block">
+                <input type="submit" formnovalidate name="Cancel" value="Cancel" class="btn btn-info btn-block">
+            </form>
+      
+      {% include "patientdb/container_end.html"  %}
+   
+{% endblock %}
+
+{% block multiselectjs %}
+    {{ form.media.js }}
+{% endblock multiselectjs %}

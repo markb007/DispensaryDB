@@ -1,0 +1,34 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if addorupdate == 'Update' %}
+      {% include "patientdb/container_start.html" with cardtitle="Update Patient Details" %}
+    {% else %}
+      {% include "patientdb/container_start.html" with cardtitle="Add Patient Details" %}
+    {% endif %}
+
+      <form method="POST" novalidate>
+          {% csrf_token %}
+          <div class="card card-body bg-light shadow">
+            <div class="alert alert-primary" role="alert">
+              Patient Contact Information
+            </div>
+            {% crispy form %}
+            <!-- {% include 'patientdb/form.html' with form=form %} -->
+          </div>
+          <br />
+          <div class="card card-body bg-light shadow">
+            <div class="alert alert-primary" role="alert">
+              Patient History Details
+            </div>
+            {% crispy pform %}
+            <!-- {% include 'patientdb/form.html' with form=pform %} -->
+          </div>
+          <br />
+          <input type="submit" value="Save Patient Details" class="btn btn-primary btn-block"> 
+      </form>
+                  
+    {% include "patientdb/container_end.html" %}
+
+
+{% endblock content %}

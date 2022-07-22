@@ -1,0 +1,91 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "patientdb/container_start.html" with cardtitle="List Products" %}
+        <div class="card card-body bg-light shadow">
+          <form>
+              {% csrf_token %}
+              {% url 'product-list' as link %}
+              {% include "patientdb/search_include_extra.html" with msg="Search Products" reset=link %}
+          </form>
+        </div>
+           <!-- Action drop down -->
+      <div class="row">
+        <div class="col-4"> 
+         <div class="dropdown dropright mt-3 mb-3">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Product Action
+            </button>
+            <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a id="actionProductUpdate" class="dropdown-item" href="{% url 'product-update' 0 %}">Update Product Info</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+        </div>
+        <div class="col-2">
+            <div class="mt-2 mb-2">
+                <p class="float-right">
+                  <a href="{% url 'product-add' %}" data-toggle="tooltip" title="Add New Product">
+                        <span style="font-size: 36px; color: #00a2ff;">
+                          <i class="fas fa-plus-circle"></i>
+                      </span>
+                  </a>
+                </p>
+              </div>
+        </div>
+      </div>  
+
+      {% include "patientdb/radioMessage.html" %}
+
+        <div class="table-responsive shadow">
+          <table class="table table-hover">
+              <thead class="alert alert-info">
+                <tr>
+                  <th>#</th>
+                  <th>Product Name</th>
+                  <th>Product Code</th>
+                  <th>Product Strength</th>
+                  <th>Product Qty</th>
+                  <th>Product Unit</th>
+                  <th>Product Cost</th>
+                  <th>Brand</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for product in object_list %}
+                  <tr>
+                      <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                              value="{{ product.pk }}" id="defaultCheck1" name="checkRadio">
+                          </div>
+                        </td>
+                      <td>{{ product.product_name }}</td>   
+                      <td>{{ product.product_code }}</td>   
+                      <td>{{ product.product_strength }}</td>   
+                      <td>{{ product.product_qty }}</td>   
+                      <td>{{ product.product_unit }}</td>   
+                      <td>{{ product.product_cost }}</td>   
+                      <td>{{ product.product_brand }}</td>  
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+          
+          {% include 'patientdb/paginate_list.html' %}
+          
+
+        </div>
+
+    {% include "patientdb/container_end.html" %}
+    
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/productlist.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}
+

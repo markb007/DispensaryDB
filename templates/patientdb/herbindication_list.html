@@ -1,0 +1,86 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    
+    {% include "patientdb/container_start.html" with cardtitle="List Herb Indications" %}
+        <div class="card card-body bg-light shadow">
+          <form>
+              {% csrf_token %}
+              {% url 'herbindication-list' as link %}
+              {% include "patientdb/search_include_extra.html" with msg="Search Herbal Indications" reset=link %}
+            </form>
+        </div>
+          <!-- Action drop down -->
+          <div class="row">
+              <div class="col-4"> 
+                <div class="dropdown dropright mt-3 mb-3">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Herbal Indication Actions
+                    </button>
+                    <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a id="actionUpdate" class="dropdown-item" href="{% url 'herbindication-update' 0 %}">Update Herb Indication</a>
+                      <a id="actionShowRelated" class="dropdown-item" href="{% url 'herbindication-update' 0 %}">Show Related Herbs</a>
+                    </div>
+                </div> 
+              </div>
+              <div class="col-6">
+              </div>
+              <div class="col-2">
+                  <div class="mt-2 mb-2">
+                      <p class="float-right">
+                        <a href="{% url 'herbindication-add' %}" data-toggle="tooltip" title="Add New Indication">
+                              <span style="font-size: 36px; color: #00a2ff;">
+                                <i class="fas fa-plus-circle"></i>
+                            </span>
+                        </a>
+                      </p>
+                  </div>
+              </div>
+            </div>  
+
+          {% include "patientdb/radioMessage.html" %}   
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+              <thead class="alert alert-info">
+                <tr>
+                  <th>#</th>
+                  <th>Indication Name</th>
+                  <th>Created</th>
+                  <th>Modified</th>
+                  <th>Related Herbs</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for herbindication in object_list %}
+                  <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio"
+                            value="{{ herbindication.pk }}" id="defaultCheck1" name="checkRadio">
+                        </div>
+                      </td>
+                      <td>{{ herbindication.herbindication_name }}</td>
+                      <td>{{ herbindication.created }}</td>
+                      <td>{{ herbindication.modified }}</td>
+                      <td>{{ herbindication.references }}</td>
+<!--                       <td><a class="btn-sm btn-info" role=button href="{% url 'herbindication-update' herbindication.pk %}">U</button></a></td>
+ -->                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+          {% include 'patientdb/paginate_list.html' %}
+        </div> 
+
+    {% include "patientdb/container_end.html" %}
+  
+
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/herbindication.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}

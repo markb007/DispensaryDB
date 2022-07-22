@@ -1,0 +1,57 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "patientdb/container_start.html" with cardtitle="List Changes" %}
+        
+
+      {% include "patientdb/radioMessage.html" %}
+        
+        <div class="table-responsive shadow">
+          <table class="table table-hover">
+              <thead class="alert alert-info">
+                <tr>
+                  <th>Action Type</th>
+                  <th>Model</th>
+                  <th>Data</th>
+                  <th>User</th>
+                  <th>Date/Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for change in object_list %}
+                  <tr>
+                      <td>{{ change.request_type }}</td>   
+                      <td>{{ change.modelname }}</td>   
+                      <td><a href='{{ change.full_url }}'>{{ change.request_data }}</a></td>   
+                      <td>{{ change.username }}</td>   
+                      <td>{{ change.created }}</td>     
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+          
+          {% include 'patientdb/paginate_list.html' %}
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-2 pull-right col-lg-2 col-md-6 col-xs-12">
+    <div class="card bg-light">
+      <div class="card-body shadow-lg">
+            <h6 class="card-title text-center font-weight-bold">Recent Actions</h3>
+            {% for item in changes %}
+                <small><sup>{{ item.modelname }} - {{ item.request_type }}</sup></small>
+                <p><a href="{{ item.full_url }}">{{ item.request_data }}</a></p>    
+            {% endfor %}
+      </div>
+    </div>
+ </div>
+</div>
+    <!-- {% include "patientdb/container_end.html" %} -->
+    
+{% endblock %}

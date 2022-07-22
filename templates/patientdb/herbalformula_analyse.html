@@ -1,0 +1,134 @@
+{% extends "patientdb/base.html" %}
+{# load templatetag 'index' #}
+{% load index %}
+{% block content %}
+
+{% include "patientdb/container_start.html" with cardtitle="Analyse Formula" %}
+                <br />
+                <div class="alert alert-primary shadow" role="alert">
+                    <h5>Formula Code: <b>{{ formula.formula_code }}</b></h5>
+                    <form class="form-inline my-2 my-lg-0">
+                        {% csrf_token %}
+                        <select class="form-control form-control-sm" id="bottlesize_id" name="bottlesize">
+                            {% for bottlesize in settings %}
+                                <option value="{{ bottlesize.formula_settings_id }}" 
+                                    {% if bottlesize.formula_settings_id  == initial %} selected {% endif %}>
+                                    {{ bottlesize.formula_bottle_size }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <button class="btn btn-primary btn-sm ml-1" type="submit">Calculate Cost</button>
+                    </form>
+                </div>
+                <br />
+                <div class="table-responsive">
+                   <table class="table table-hover">
+                        <thead class="thead-inverse thead-dark">
+                          <tr>
+                            <th>Product Name</th>
+                            <th>Product Code</th>
+                            <th>Formula Quantity</th>
+                            <th>Formula Cost</th>
+                            <th>Product Cost per</th>
+                            <th>Product Size</th>
+                            <th>Update</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for ingredient in ingredients %}
+                            <tr>
+                                <td>{{ ingredient.product }}</td>
+                                <td>{{ ingredient.product.product_code }}</td>
+                                {# integer or float depending on formula type #}
+                                {% if formula.formula_type in "MP" %}
+                                    <td>{{ ingredient.quantity|floatformat:2 }}
+                                    {% if formula.formula_type in "M" %}
+                                        ml
+                                    {% else %}
+                                        %
+                                    {% endif %}
+                                    </td>
+                                {% else %}
+                                    <td>{{ ingredient.quantity }}
+                                    {% if formula.formula_type in "D" %}
+                                        drops
+                                    {% else %}
+                                        ml
+                                    {% endif %}
+                                    </td>  
+                                {% endif %}
+                                
+                                <td>${{ costinformula|index:forloop.counter0 }}</td>
+                                <td class='text-right pr-4'>${{ ingredient.product.product_cost|floatformat:2 }}</td>
+                                <td class='text-right'>{{ ingredient.product.product_qty }} {{ ingredient.product.product_unit|lower }}</td>
+                                <td><a class="btn-sm btn-info" role=button href="{% url 'formula-list' %}">U</button></a></td>
+                            </tr>
+                            {% endfor %}
+                            
+                           <tr>
+                            <td></td>
+                            <td>Total</td>
+                            {% if formula.formula_type in "M" %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform|floatformat:2 }} mls</span></td>
+                            {% endif %}
+                            {% if formula.formula_type in "P" %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform|floatformat:2 }} %</span></td>
+                            {% endif %}
+                            {% if formula.formula_type in "D" %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform }} drops</span></td>
+                            {% endif %}
+                            {% if formula.formula_type in "T" %}
+                                <td><span class="border-primary border-top border-bottom">{{ totalform|floatformat:2 }} total mls</span></td>
+                            {% endif %}
+
+                            <td>${{ costperdose|floatformat:4 }}</td>
+
+                            {% if formula.formula_type in "M" %}
+                                <td>* cost per dose</td>
+                            {% endif %}
+                            {% if formula.formula_type in "P" %}
+                                <td>* cost per 100ml</td>
+                            {% endif %}
+                            {% if formula.formula_type in "D" %}
+                                <td>* cost per dose</td>
+                            {% endif %}
+                            {% if formula.formula_type in "T" %}
+                                <td>* cost formula mls</td>
+                            {% endif %}
+                         </tr>
+                         
+                         <tr>
+                             <td><b>Total cost per {{ size }}mls = </b></td>
+                             <td><b>${{ costperbottle|floatformat:2 }}</b></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                         </tr>
+                         <tr>
+                            <td><b>Retail at markup of {{ markup }}% = </b></td>
+                            <td><b>${{ retailperbottle|floatformat:2 }}</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                         </tr>
+                         <tr>
+                            <td><b>Minimum RRP in settings = </b></td>
+                            <td><b>${{ minrrp|floatformat:2 }}</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                         </tr>
+                        </tbody>
+                   </table> 
+                </div>   
+          
+{% include "patientdb/container_end.html" %}
+
+{% endblock %}
+

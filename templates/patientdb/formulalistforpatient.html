@@ -1,0 +1,118 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+      {% include "patientdb/container_start.html" with cardtitle="Herbal Formula List" %}
+          <h3 class="text-center">{{ patient_name }}</h3>
+          
+          <div class="card card-body bg-light shadow">
+            <form>
+                {% csrf_token %}
+                {% include "patientdb/search_include.html" with msg="Search Herbal Formulas" %}
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                      <label for="datefilter">Date Filter</label>
+              
+                      <select name="optdate" class="custom-select" id="optdate">
+                        <option value="0" selected>Choose date filter ...</option>
+                        <option value="1">Today</option>
+                        <option value="2">This week</option>
+                        <option value="3">Last week</option>
+                        <option value="4">This month</option>
+                        <option value="5">Last month</option>
+                        <option value="6">This year</option>
+                        <option value="7">Last year</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                      <label for="sortfilter">Sort Filter</label>
+              
+                      <select name="optsort" class="custom-select" id="optsort">
+                        <option value="0" selected>Choose sort filter ...</option>
+                        <option value="1">Formula code</option>
+                      </select>
+                    </div>
+              
+                  </div>
+            </form>
+          </div> 
+
+        <!-- Action drop down -->
+        <div class="row">
+            <div class="col-4">
+                <div class="dropdown dropright mt-3 mb-3">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Formula Action
+                    </button>
+                    <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a id="actionRepeat" class="dropdown-item" href="{% url 'dispensed-preadd' 0 0 0 %}">Dispense Formula</a>
+                      <a id="actionAnalyse" class="dropdown-item" href="{% url 'formula-analyse' 0 %}">Analyse Formula</a>
+                      <a id="actionUpdate" class="dropdown-item" href="{% url 'formula-update' 0 %}">Update Formula</a>
+                      <a id="actionClone" class="dropdown-item" href="{% url 'formula-clone' 0 %}">Clone Formula</a>
+                      <a id="actionDelete" class="dropdown-item" href="{% url 'formula-delete' 0 %}">Delete Formula</a>
+                    </div>
+                  </div> 
+            </div>
+            <div class="col-6">
+            </div> 
+            <div class="col-2">
+                <div class="mt-2 mb-2">
+                  <p class="float-right">
+                    <a href="{% url 'formula-add' %}" data-toggle="tooltip" title="Add New Formula">
+                          <span style="font-size: 36px; color: #00a2ff;">
+                            <i class="fas fa-plus-circle"></i>
+                        </span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+        </div>
+
+        {% include "patientdb/radioMessage.html" %}
+
+        <div class="table-responsive">
+          <table class="table table-hover table-striped">
+              <thead class="alert alert-info">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Formula Code</th>
+                  <th scope="col">Formula Type</th>
+                  <th scope="col">Times Dispensed</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">Modified</th
+                </tr>
+              </thead>
+              <tbody>
+                <!-- context data is in model class name _list, or object_list -->
+                  {% for formula in herbalformula_list %}
+                  <tr>
+                      <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                              value="{{ formula.formula_id}}/0/0/" id="defaultCheck1" name="checkRadio">
+                          </div>
+                        </td>
+                      <td><a href="{% url 'formula-detail' formula.pk %}">{{ formula.formula_code }}</a></td>   
+                      <td class='text-center'>{{ formula.formula_type }}</td>   
+                      <td class='text-center'>{{ formula.dispensed }}</td>   
+                      <td>{{ formula.created }}</td>   
+                      <td>{{ formula.modified }}</td> 
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
+        {% include 'patientdb/paginate_list.html' %}
+      </div>
+
+    {% include "patientdb/container_end.html" %}
+
+
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/herbalformulalist.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}

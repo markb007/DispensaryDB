@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Patient Report</title>
+    <style type="text/css">
+        @page {
+            size: A4 landscape;
+            margin: 1cm;
+        }
+        .table th {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+        }
+        .table td {
+            padding-top: 5px;
+        }
+        /* .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 5px;
+            background-color: #fff;
+        }
+        .table th,
+        .table td {
+            padding: 3px;
+            vertical-align: top;
+            border-top: 1px solid #000;
+            text-align: left;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #000;
+        }
+        .table tbody + tbody {
+            border-top: 2px solid #000;
+        }
+        .table .table {
+            background-color: #fff;
+        }
+        .list-group {
+            display: block;
+            width: 100%;
+            list-style: none;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .list-group p {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            list-style: none;
+            font-size: 1.1em;
+        } */
+    </style>
+</head>
+<body>
+
+  <div class="table-responsive shadow">
+    <table class="table table-hover table-striped">
+        <thead class="alert alert-info shadow">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postcode</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Modified</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!-- context data is in model class name _list, or object_list -->
+            {% for patient in patient_list %}
+            <tr>
+                <td>{{ patient.first_name|truncatechars:20 }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.address_1 }}</td>
+                <td>{{ patient.city }}</td>
+                <td>{{ patient.postcode }}</td>
+                <td>{{ patient.mobile }}</td>
+                <td>{{ patient.email|truncatechars:20 }}</td>
+                <td>{{ patient.modified }}</td>
+           </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+</div>
+</body>
+</html>

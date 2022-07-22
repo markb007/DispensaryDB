@@ -1,0 +1,17 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Update Health Fund" %}
+
+              <form method="POST">
+                  {% csrf_token %}
+
+                  {% include 'patientdb/form.html' %}
+
+                  <input type="submit" value="Update" class="btn btn-primary">
+              </form>
+                  
+        {% include "patientdb/container_end.html" %}
+       
+{% endblock %}

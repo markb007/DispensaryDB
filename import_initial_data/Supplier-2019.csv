@@ -1,0 +1,4 @@
+created,modified,supplier_id,supplier_name,supplier_customer_code,address_1,address_2,city,state,postcode,phone,email,mobile,supplier_rep,brand_supplier
+10/12/2019 20:11,10/12/2019 23:47,2,FIT,C01210,"Level 4, 64 Kippax St",,Surry Hills,NSW,2010,1300650455,cs@fit.net.au,,Tegan Ross,Bioceuticals
+10/12/2019 20:10,10/12/2019 23:45,1,Integria Healthcare,323,"Building 5, Freeway Office Park",2728 Logan Rd,Eight Mile Plains,QLD,4113,1300654336,orders@integria.com,,Kristi Dormer,"Mediherb,Herbal Extract Co"
+10/12/2019 20:13,10/12/2019 23:32,3,Vital.ly,GVCESS,"Unit 1, 597 Gardeners Rd",,Mascot,NSW,2020,291600006,orders@vital.ly,,,"Mediherb,Bioceuticals,Herbal Extract Co"

@@ -1,0 +1,78 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include "patientdb/container_start.html" with cardtitle="List Formula Settings" %}
+<div class="row">
+    <div class="col-4"> 
+        <div class="dropdown dropright mt-3 mb-3">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Formula Setting Actions
+            </button>
+            <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a id="actionUpdate" class="dropdown-item" href="{% url 'formula-update-settings' 0 %}">Update Setting</a>
+            </div>
+        </div> 
+      </div>
+  <div class="col-6">
+  </div>
+  <div class="col-2">
+      <p class="float-right">
+        <a href="{% url 'formula-add-settings' %}" data-toggle="tooltip" title="Add New Setting">
+              <span style="font-size: 36px; color: #00a2ff;">
+                <i class="fas fa-plus-circle"></i>
+            </span>
+        </a>
+      </p>
+  </div>
+</div>
+
+{% include "patientdb/radioMessage.html" %}   
+
+<div class="table-responsive shadow">
+  <table class="table table-hover">
+    <thead class="alert alert-info">
+      <tr>
+        <th>#</th>
+        <th>Bottle Size</th>
+        <th>Bottle Cost</th>
+        <th>Mark Up %</th>
+        <th>Lowest Price</th>
+        <th>Dispense Fee</th>
+        <th>Modified</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for settings in object_list %}
+      <tr>
+        <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio"
+                value="{{ settings.pk }}" id="defaultCheck1" name="checkRadio">
+            </div>
+        </td>
+        <td class='text-center'>{{ settings.formula_bottle_size }}</td>
+        <td class='text-center'>${{ settings.formula_bottle_cost|floatformat:2 }}</td>
+        <td class='text-center'>{{ settings.formula_bottle_size_mu|floatformat:2 }} %</td>
+        <td class='text-right pr-4'>${{ settings.formula_bottle_size_min_rrp|floatformat:2 }}</td>
+        <td class='text-right pr-4'>${{ settings.formula_dispensing_fee|floatformat:2 }}</td>
+        <td>{{ settings.modified }}</td>
+<!--         <td><a class="btn-sm btn-info" role=button href="{% url 'formula-update-settings' settings.pk %}">U</button></a>
+        </td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include 'patientdb/paginate_list.html' %}
+</div>
+
+{% include "patientdb/container_end.html" %}
+
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/formulasettings.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}

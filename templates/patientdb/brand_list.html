@@ -1,0 +1,89 @@
+{% extends "patientdb/base.html" %}
+{% load static %}
+
+{% block content %}
+
+      {% include "patientdb/container_start.html" with cardtitle="List Brands" %}
+
+          <div class="card card-body bg-light shadow">
+            <form>
+               {% csrf_token %}
+               {% url 'brand-list' as link %}
+               {% include "patientdb/search_include_extra.html" with msg="Search Brands" reset=link%}
+            </form>
+          </div>
+
+             <!-- Action drop down -->
+             <div class="row">
+                <div class="col-4"> 
+                  <div class="dropdown dropright mt-3 mb-3">
+                      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Brand Action
+                      </button>
+                      <div id="actionDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a id="actionBrandUpdate" class="dropdown-item" href="{% url 'brand-update' 0 %}">Update Brand</a>
+                        <a id="actionBrandSuppliers" class="dropdown-item" href="{% url 'brand-update' 0 %}">Show Brand Suppliers</a>
+                        <a id="actionBrandProducts" class="dropdown-item" href="{% url 'brand-show-products' 0 %}">Show Brand Products</a>
+                      </div>
+                  </div> 
+                </div>
+                <div class="col-6">
+                </div>
+                <div class="col-2">
+                    <div class="mt-2 mb-2">
+                        <p class="float-right">
+                          <a href="{% url 'brand-add' %}" data-toggle="tooltip" title="Add New Brand">
+                                <span style="font-size: 36px; color: #00a2ff;">
+                                  <i class="fas fa-plus-circle"></i>
+                              </span>
+                          </a>
+                        </p>
+                      </div>
+                </div>
+            </div>  
+
+            {% include "patientdb/radioMessage.html" %}
+
+          <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="alert alert-info">
+                  <tr>
+                    <th>#</th>
+                    <th>Brand Name</th>
+                    <th>Short Name</th>
+                    <th>No. Suppliers</th>
+                    <th>No. Products</th>
+                    <th>Last Modified</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for brand in object_list %}
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio"
+                                value="{{ brand.pk }}" id="defaultCheck1" name="checkRadio">
+                            </div>
+                        </td>
+                        <td>{{ brand.brand_name }}</td>
+                        <td>{{ brand.brand_short }}</td>
+                        <td class="text-center">{{ brand.references }}</td>
+                        <td class="text-center">{{ brand.products }}</td>
+                        <td>{{ brand.modified }}</td>
+<!--                         <td><a class="btn-sm btn-info" role=button href="{% url 'brand-update' brand.pk %}">U</button></a></td>
+ -->                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          
+          {% include 'patientdb/paginate_list.html' %}
+        </div>
+
+      {% include "patientdb/container_end.html" %}
+
+{% endblock %}
+
+{% block inlineformsetjs %}
+    <script src="{% static 'js/brandlist.js' %}"></script>
+    <script src="{% static 'js/radioCheck.js' %}"></script>
+{% endblock inlineformsetjs %}

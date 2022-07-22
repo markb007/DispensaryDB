@@ -1,0 +1,25 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="Add Formula" %}
+        <form method="post">
+            {% csrf_token %}
+
+            {% include 'patientdb/form.html' %}
+            
+            {% for formset in inlines %}
+              {% comment %} {% for form in formset %}
+                  
+                {% include 'patientdb/form.html' %}
+              {% endfor %} {% endcomment %}
+              {{ formset}}
+            {% endfor %}
+            
+            <input type="submit" value="Submit" />
+
+        </form>
+
+    {% include "patientdb/container_end.html" %}
+
+{% endblock content %}

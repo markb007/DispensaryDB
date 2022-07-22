@@ -1,0 +1,153 @@
+﻿product_id,product_code,product_name,product_cost,product_strength,product_qty,product_unit,product_brand,herbmed_product
+,MH5ADHA,Adhatoda  ,49.35,1:02,500,Mls,Mediherb,Adhatoda
+,MH5ALBI,Albizia  ,41.38,1:02,500,Mls,Mediherb,Albizia  
+,MH5ANDR,Andrographis  ,46.16,1:02,500,Mls,Mediherb,Andrographis  
+,MH5ARNI,Arnica ,39.77,1:02,500,Mls,Mediherb,Arnica 
+,MH5ASTR,Astragalus  ,47.91,1:02,500,Mls,Mediherb,Astragalus  
+,MH5BACO,Bacopa  ,40.98,1:02,500,Mls,Mediherb,Bacopa  
+,MH5SCUT,Baical Skullcap  ,45.5,1:02,500,Mls,Mediherb,Baical Skullcap  
+,MH5BAPT,Baptisia  ,93.7,1:02,500,Mls,Mediherb,Baptisia  
+,MH5BARB,Barberry  ,44.1,1:02,500,Mls,Mediherb,Barberry  
+,MH5BIL3,Bilberry ,85.46,1:02,500,Mls,Mediherb,Bilberry 
+,MH5BKCO,Black Cohosh  ,43.94,1:02,500,Mls,Mediherb,Black Cohosh  
+,MH5GWAL,Black Walnut Hulls ,28.93,1:02,500,Mls,Mediherb,Black Walnut
+,MH5BLA1,Bladderwrack,64.92,1:02,500,Mls,Mediherb,Bladderwrack
+,MH5BLUE,Blue Flag  ,90.09,1:02,500,Mls,Mediherb,Blue Flag  
+,MH5BUCH,Buchu  ,101.3,1:02,500,Mls,Mediherb,Buchu  
+,MH5BUGL,Bugleweed  ,45.46,1:02,500,Mls,Mediherb,Bugleweed  
+,MH5BUPL,Bupleurum  ,51.24,1:02,500,Mls,Mediherb,Bupleurum  
+,MH5BURD,Burdock  ,45.5,1:02,500,Mls,Mediherb,Burdock  
+,MH5BUTB,Butchers Broom  ,57.35,1:02,500,Mls,Mediherb,Butchers Broom  
+,MH5CALE,Calendula  ,48.86,1:02,500,Mls,Mediherb,Calendula
+,MH5CALO,Calendula Low Alcohol  ,51.73,1:02,500,Mls,Mediherb,Calendula
+,MH5CPOP,Californian Poppy  ,56.55,1:02,500,Mls,Mediherb,California Poppy  
+,MH5CASC,Cascara  ,45.62,1:02,500,Mls,Mediherb,Cascara  
+,MH5CAYE,Cayenne,44.29,1:02,500,Mls,Mediherb,Cayenne
+,MH5CELE,Celery Seed  ,37.88,1:02,500,Mls,Mediherb,Celery Seed  
+,MH5CHMO,Chamomile  ,41.44,1:02,500,Mls,Mediherb,Chamomile  
+,MH5CHAS,Chaste Tree  ,39.89,1:02,500,Mls,Mediherb,Chaste Tree  
+,MH2CHEN,Chen Pi ,26.87,1:02,500,Mls,Mediherb,Chen Pi 
+,MHCINT45,Cinnamon Quills,57.18,1:02,500,Mls,Mediherb,Cinnamon Quills
+,MH5CLI2,Clivers  ,45.17,1:02,500,Mls,Mediherb,Clivers  
+,MH5CODO,Codonopsis  ,57.18,1:02,500,Mls,Mediherb,Codonopsis  
+,MH5COLE,Coleus,69.8,1:02,500,Mls,Mediherb,Coleus
+,MH5CSLK,Corn Silk,61.17,1:02,500,Mls,Mediherb,Corn Silk
+,MH5CORY1,Corydalis,45.62,1:02,500,Mls,Mediherb,Corydalis
+,MH5COGR,Couch Grass,73.02,1:02,500,Mls,Mediherb,Couch Grass
+,MH5CRAM,Cramp Bark  ,77.17,1:02,500,Mls,Mediherb,Cramp Bark  
+,MH5CRAT,Crataeva  ,42.95,1:02,500,Mls,Mediherb,Crataeva  
+,MH5DAMI,Damiana  ,43.31,1:02,500,Mls,Mediherb,Damiana  
+,MH5DANS,Dan Shen  ,47.16,1:02,500,Mls,Mediherb,Dan Shen  
+,MH5DANL,Dandelion Leaves,61.97,1:02,500,Mls,Mediherb,Dandelion Leaf
+,MH5DANR,Dandelion Root  ,50.99,1:02,500,Mls,Mediherb,Dandelion Root  
+,MH5DEVL,Devils Claw  ,62.37,1:02,500,Mls,Mediherb,Devils Claw  
+,MH5DONG,Dong Quai  ,48.02,1:02,500,Mls,Mediherb,Dong Quai  
+,MH5ECHA,Echinacea  Angustifolia Root ,101.42,1:02,500,Mls,Mediherb,Echinacea  angustifolia
+,MH5ECB2,Echinacea  Premium ,68.65,1:02,500,Mls,Mediherb,"Echinacea  purpurea,Echinacea angustifolia"
+,MH5ECP2,Echinacea  Purpurea Root ,53.96,1:02,500,Mls,Mediherb,Echinacea  purpurea
+,MH5ECPG,Echinacea Purpurea Glycetract ,53.57,1:02,500,Mls,Mediherb,Echinacea purpurea
+,MH5ELDE,Elder Flowers  ,54.37,1:02,500,Mls,Mediherb,Elder Flowers  
+,MH5ELEC,Elecampane  ,43.48,1:02,500,Mls,Mediherb,Elecampane  
+,MH5EUPH,Euphorbia  ,41.1,1:02,500,Mls,Mediherb,Euphorbia  
+,MH5EYEB,Eyebright  ,43.11,1:02,500,Mls,Mediherb,Eyebright  
+,MH5FALS,False Unicorn Root  ,233.81,1:02,500,Mls,Mediherb,False Unicorn Root  
+,MH5FENN,Fennel  ,42.12,1:02,500,Mls,Mediherb,Fennel  
+,MH5FGRK,Fenugreek  ,38.46,1:02,500,Mls,Mediherb,Fenugreek  
+,MH5FEVE,Feverfew,41.63,1:02,500,Mls,Mediherb,Feverfew
+,MH5FLAV,Flavouring Mixture ,46.36,1:02,500,Mls,Mediherb,Flavouring Mixture 
+,MH5FRI2,Fringe Tree  ,86.36,1:02,500,Mls,Mediherb,Fringe Tree  
+,MH5GEN2,Gentian  ,56.15,1:02,500,Mls,Mediherb,Gentian  
+,MH5GING,Ginger  ,38.9,1:02,500,Mls,Mediherb,Ginger  
+,MH5GIN5,Ginkgo biloba,83.71,1:02,500,Mls,Mediherb,Ginkgo biloba
+,MH5ARTI,Globe Artichoke  ,43.11,1:02,500,Mls,Mediherb,Globe Artichoke  
+,MH5GRUE,Goats Rue  ,52.44,1:02,500,Mls,Mediherb,Goats Rue  
+,MH5GROD,Golden Rod  ,42.33,1:02,500,Mls,Mediherb,Golden Rod  
+,MH5GS13,Golden Seal,125.04,1:02,500,Mls,Mediherb,Golden Seal
+,MH5GS15,Golden Seal,101.58,1:02,500,Mls,Mediherb,Golden Seal
+,MH5GKOL,Gotu Kola,44.67,1:02,500,Mls,Mediherb,Gotu Kola
+,MH5GRC2,Greater Celandine  ,42.33,1:02,500,Mls,Mediherb,Greater Celandine  
+,MH5GRIN,Grindelia  ,50.48,1:02,500,Mls,Mediherb,Grindelia  
+,MH5GYMN,Gymnema,62.87,1:02,500,Mls,Mediherb,Gymnema
+,MHGYNL500,Gynostemma,45.63,1:02,500,Mls,Mediherb,Gynostemma
+,MH5HAWT,Hawthorn Berries  ,49.43,1:02,500,Mls,Mediherb,Hawthorn Berry
+,MH5HLEA,Hawthorn Leaves  ,48.57,1:02,500,Mls,Mediherb,Hawthorn Leaf
+,MH5HEMI,Hemidesmus  ,49.58,1:02,500,Mls,Mediherb,Hemidesmus  
+,MH5HOP2,Hops  ,48.95,1:02,500,Mls,Mediherb,Hops  
+,MH5HORS,Horsechestnut  ,45.62,1:02,500,Mls,Mediherb,Horsechestnut  
+,MH5HRAD,Horseradish  ,45.62,1:02,500,Mls,Mediherb,Horseradish  
+,MH5HTAL,Horsetail  ,45.5,1:02,500,Mls,Mediherb,Horsetail  
+,MH5JAMD,Jamaica Dogwood  ,48.31,1:02,500,Mls,Mediherb,Jamaica Dogwood  
+,MH5KAV1,Kava,72.42,1:02,500,Mls,Mediherb,Kava
+,MH5KORE,Korean Ginseng  ,148.95,1:02,500,Mls,Mediherb,Korean Ginseng  
+,MH5LMAN,Ladies Mantle  ,48.31,1:02,500,Mls,Mediherb,Ladies Mantle  
+,MH5LAVE,Lavender  ,68.96,1:02,500,Mls,Mediherb,Lavender  
+,MH5LEMB,Lemon Balm  ,49.68,1:02,500,Mls,Mediherb,Lemon Balm  
+,MH5LICO,Licorice,41.09,1:02,500,Mls,Mediherb,Licorice
+,MH5LIHG,Licorice High Grade,58.3,1:02,500,Mls,Mediherb,Licorice
+,MH5LIME,Lime Flowers  ,48.05,1:02,500,Mls,Mediherb,Lime Flowers  
+,MH5MAR5,Marshmallow Root,34.46,1:02,500,Mls,Mediherb,Marshmallow Root
+,MH5MARG,Marshmallow Root Glycetract ,44.37,1:02,500,Mls,Mediherb,Marshmallow Root
+,MH5MEAD,Meadowsweet  ,47.91,1:02,500,Mls,Mediherb,Meadowsweet  
+,MH5VMEX,Mexican Valerian  ,60.39,1:02,500,Mls,Mediherb,Mexican Valerian  
+,MH5MIS2,Mistletoe  ,41.1,1:02,500,Mls,Mediherb,Mistletoe  
+,MH5MWOR,Motherwort  ,43.15,1:02,500,Mls,Mediherb,Motherwort  
+,MH5MULL,Mullein  ,42.33,1:02,500,Mls,Mediherb,Mullein  
+,MH5MYRR,Myrrh,34.63,1:02,500,Mls,Mediherb,Myrrh
+,MH5NETT,Nettle Leaf  ,44.75,1:02,500,Mls,Mediherb,Nettle Leaf  
+,MH5NROT,Nettle Root  ,47.5,1:02,500,Mls,Mediherb,Nettle Root  
+,MH5NIGE,Nigella  ,40.33,1:02,500,Mls,Mediherb,Nigella  
+,MH5OATG,Oats Green  ,36.65,1:02,500,Mls,Mediherb,Oats Green  
+,MH5OATS,Oats Seed,38.98,1:02,500,Mls,Mediherb,Oats Seed
+,MH5OLIV,Olive Leaves  ,47.54,1:02,500,Mls,Mediherb,Olive Leaf  
+,MH5OGRA,Oregon Grape  ,52.83,1:02,500,Mls,Mediherb,Oregon Grape  
+,MH5PAEO,Paeonia  ,42.75,1:02,500,Mls,Mediherb,Paeony
+,MH5PASQ,Pasque Flower  ,57.86,1:02,500,Mls,Mediherb,Pasque Flower  
+,MH5PASS,Passionflower  ,49.35,1:02,500,Mls,Mediherb,Passionflower  
+,MH5PELA,Pelargonium,43.55,1:02,500,Mls,Mediherb,Pelargonium
+,MH5PEPP,Peppermint  ,56.79,1:02,500,Mls,Mediherb,Peppermint  
+,MH5PLEU,Pleurisy Root  ,63.3,1:02,500,Mls,Mediherb,Pleurisy Root  
+,MH5POKE,Poke Root,37.14,1:02,500,Mls,Mediherb,Poke Root
+,MH5PRIC,Prickly Ash  ,56.42,1:02,500,Mls,Mediherb,Prickly Ash  
+,MH5PROP,Propolis,55.09,1:02,500,Mls,Mediherb,Propolis
+,MH5QING,Qing Hao,58.37,1:02,500,Mls,Mediherb,Qing Hao
+,MH5RASP,Raspberry Leaves  ,43.91,1:02,500,Mls,Mediherb,Raspberry Leaf  
+,MH5REDC,Red Clover Flowers  ,43.91,1:02,500,Mls,Mediherb,Red Clover
+,MH5REHM,Rehmannia  ,46.05,1:02,500,Mls,Mediherb,Rehmannia  
+,MH5RH500,Rhodiola,48.87,1:02,500,Mls,Mediherb,Rhodiola
+,MH5RIBW,Ribwort  ,43.91,1:02,500,Mls,Mediherb,Ribwort  
+,MH5ROSE,Rosemary  ,44.75,1:02,500,Mls,Mediherb,Rosemary  
+,MH5SAFF,Saffron,62.17,1:02,200,Mls,Mediherb,Saffron
+,MH5SAGE,Sage  ,47.52,1:02,500,Mls,Mediherb,Sage  
+,MH5SARS,Sarsaparilla  ,50.75,1:02,500,Mls,Mediherb,Sarsaparilla  
+,MH5SAW2,Saw Palmetto  ,48.73,1:02,500,Mls,Mediherb,Saw Palmetto  
+,MH5SCHI,Schisandra  ,46.42,1:02,500,Mls,Mediherb,Schisandra  
+,MH5SENA,Senna Pods  ,43.91,1:02,500,Mls,Mediherb,Senna Pods  
+,MH5SHAT,Shatavari  ,50.99,1:02,500,Mls,Mediherb,Shatavari  
+,MH5SPUR,Shepherds Purse  ,45.5,1:02,500,Mls,Mediherb,Shepherds Purse  
+,MH5SIBE,Siberian Ginseng  ,65.6,1:02,500,Mls,Mediherb,Siberian Ginseng  
+,MH5SKUL,Skullcap  ,54.24,1:02,500,Mls,Mediherb,Skullcap  
+,MH5SQU2,Squaw Vine  ,79.98,1:02,500,Mls,Mediherb,Squaw Vine  
+,MH5STJW,St Johns Wort  ,40.3,1:02,500,Mls,Mediherb,St Johns Wort  
+,MH5STJH,St Johns Wort  High Grade ,49.29,1:02,500,Mls,Mediherb,St Johns Wort 
+,MH5STMG,St Marys Thistle Glycetract ,53.3,1:02,500,Mls,Mediherb,St Marys Thistle
+,MH5STMA,St Marys Thistle,44.97,1:02,500,Mls,Mediherb,St Marys Thistle
+,MH5SUND,Sundew,47.16,1:02,500,Mls,Mediherb,Sundew
+,MH5THUJ,Thuja,34.63,1:02,500,Mls,Mediherb,Thuja
+,MH5THYM,Thyme  ,42.12,1:02,500,Mls,Mediherb,Thyme  
+,MH5TIEN,Tienchi Ginseng  ,99.3,1:02,500,Mls,Mediherb,Tienchi Ginseng  
+,MH5TRIB,Tribulus,87.3,1:02,500,Mls,Mediherb,Tribulus
+,MH5TUNI,True Unicorn Root  ,178.81,1:02,500,Mls,Mediherb,True Unicorn Root  
+,MH5TURM,Turmeric,47.61,1:02,500,Mls,Mediherb,Turmeric
+,MH5VALE,Valerian  ,42.12,1:02,500,Mls,Mediherb,Valerian  
+,MH5VERV,Vervain  ,50.75,1:02,500,Mls,Mediherb,Vervain  
+,MH5WHOR,White Horehound  ,42.33,1:02,500,Mls,Mediherb,White Horehound  
+,MH5WCHE,Wild Cherry  ,43.91,1:02,500,Mls,Mediherb,Wild Cherry  
+,MH5WILD,Wild Yam  ,48.62,1:02,500,Mls,Mediherb,Wild Yam  
+,MH5WBAR,Willow Bark  ,40.61,1:02,500,Mls,Mediherb,Willow Bark  
+,MH5WHER,Willow Herb (Epilobium)  ,57.18,1:02,500,Mls,Mediherb,Willow Herb
+,MH5WIT2,Withania,70.62,1:02,500,Mls,Mediherb,Withania
+,MH5WBET,Wood Betony  ,52.18,1:02,500,Mls,Mediherb,Wood Betony  
+,MH5WORM,Wormwood,35.94,1:02,500,Mls,Mediherb,Wormwood
+,MH5YARR,Yarrow  ,45.62,1:02,500,Mls,Mediherb,Yarrow  
+,MH5YDOC,Yellow Dock  ,45.36,1:02,500,Mls,Mediherb,Yellow Dock  
+,MH5ZIZI,Zizyphus  ,51.61,1:02,500,Mls,Mediherb,Zizyphus  

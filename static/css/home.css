@@ -1,0 +1,27 @@
+.myclass {
+    border-radius: 25px;
+    display:flex;
+    padding: 20px;
+    font-size: 32px;
+    /* font-weight: bold; */
+    align-items: center;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }
+
+a {
+    text-decoration: none;
+    color: black; 
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+} 

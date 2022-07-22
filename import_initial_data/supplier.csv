@@ -1,0 +1,4 @@
+created,modified,SupplierId,SupplierName,SupplierCustCode,Address1,Address2,City,State,PostCode,Phone,Email,Mobile,SupplierRep
+2019-12-11 07:10:08.190957+11,2019-12-11 07:10:08.190957+11,1,Integria Healthcare,323,,,,NSW,,,,,
+2019-12-11 07:11:23.314248+11,2019-12-11 07:11:23.314248+11,2,FIT,C01210,,,,NSW,,,,,
+2019-12-11 07:13:46.503685+11,2019-12-11 07:13:46.503685+11,3,Vital.ly,GVCESS,,,,NSW,,,,,

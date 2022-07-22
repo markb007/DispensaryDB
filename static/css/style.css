@@ -1,0 +1,14 @@
+.navbar {
+    border-bottom: #95cbe6 2px solid;
+    opacity: 0.9;
+}
+
+.padit {
+    padding-top: 75px;
+}
+
+.dropdown .dropdown-menu a:hover {
+    color: #fff;
+    background-color: #65bbb4;
+    border-color: #fff;
+}

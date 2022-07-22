@@ -1,0 +1,19 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Add Formula Setting" %}
+        <div class="card card-body bg-light shadow">
+            <form method="POST">
+                {% csrf_token %}
+
+                {% include 'patientdb/form.html' %}
+
+                <input type="submit" value="Save Setting" class="btn btn-primary btn-block">
+            </form>
+            </div>
+
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}

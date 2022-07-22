@@ -1,0 +1,37 @@
+{% extends "patientdb/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    
+        {% include "patientdb/container_start.html" with cardtitle="Update Products" %}
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {% if formset.non_field_errors or formset.non_form_errors%}
+                    <div class="alert alert-danger alert-dismissable" role="alert">
+                        <button class="close" data-dismiss="alert">
+                            <small><sup>x</sup></small>
+                        </button>
+                        {{ formset.non_field_errors }}
+                        {{ formset.non_form_errors }}
+                    </div>
+                {% endif %}
+                {{ formset.management_form }}
+                
+                {% for form in formset %}
+                    {{ form.product_id }}
+                    {# labels display with first occurrence only #}
+                    {% if forloop.first %}  
+                        {% crispy form %}
+                    {% else %}
+                        {% crispy form form.newhelper %}
+                    {% endif %}
+                {% endfor %}
+            
+                <input type="submit" value="Update Product Details" class="btn btn-primary btn-block">
+            
+            </form>
+
+        {% include "patientdb/container_end.html" %}
+
+        
+{% endblock %}

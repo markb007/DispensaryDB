@@ -1,0 +1,281 @@
+{% extends "patientdb/base.html" %}
+
+{% block content %}
+
+    {% include "patientdb/container_start.html" with cardtitle="Create, Allocate & Dispense Formula" %}
+
+    <div>
+    
+         {% comment %} {{ form.errors }}
+         {{ form.non_form_errors }} {% endcomment %}
+         {% for dict in formset.errors %}
+                {% for error in dict.values %}
+                    {{ error }}
+                {% endfor %}
+        {% endfor %}
+        <br />
+        <br />
+        <form action="" method="post" id="herbalformula_form">
+            {% csrf_token %}
+            <div>
+            <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Formula</legend>
+                {{ form.formula_code.errors }}
+                {{ form.formula_code.label_tag }}
+                {{ form.formula_code }}
+                {{ form.formula_type.label_tag }}
+                {{ form.formula_type }}
+            </fieldset>
+            </div>
+            <br />
+            <br />
+
+            <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Formula Ingredients</legend>
+                 <table id="myFormset1Table" border="0" cellpadding="0">
+                    <tbody> 
+                        {{ ingredient_form.non_form_errors }}
+                        {{ ingredient_form.management_form }}
+                        {% for form in ingredient_form %}
+                            {{ form.id }} 
+                            <div class="inline {{ ingredient_form.prefix }}">
+                                {{ form.product.errors }}
+                                {{ form.product.label_tag }}
+                                {{ form.product }}
+                                {{ form.quantity.errors }}
+                                {{ form.quantity.label_tag }}
+                                {{ form.quantity }}
+                            </div>
+                        {% endfor %}
+                        <div class="row justify-content-center">
+                            <div class="col-6class="font-weight-bold" "><b>Total:  {{ total_quantity }}</b><span class="font-weight-bold" id="displaytotal">1.0</span></div>
+                        </div>
+                    </tbody>
+                </table> 
+            </fieldset>
+            <br />
+            <br />
+            <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Allocate Patient</legend>
+                 <table id="myFormset2Table" border="0" cellpadding="0">
+                    <tbody> 
+                        
+                        {{ patient_form.non_form_errors }}
+                        {{ patient_form.management_form }}
+                        {% for form in patient_form %}
+                            {{ form.id }}
+                            <div class="inline {{ patient_form.prefix }}">
+                                {{ form.patient.errors }}
+                                {{ form.patient.label_tag }}
+                                {{ form.patient }}
+                                {{ form.quantity.errors }}
+                                {{ form.quantity.label_tag }}
+                                {{ form.quantity }}
+                                {{ form.doseage.errors }}
+                                {{ form.doseage.label_tag }}
+                                {{ form.doseage }}
+                                {{ form.measure.errors }}
+                                {{ form.measure.label_tag }}
+                                {{ form.measure }}
+                                {{ form.frequency.errors }}
+                                {{ form.frequency.label_tag }}
+                                {{ form.frequency }}
+                                {{ form.directions.errors }}
+                                {{ form.directions.label_tag }}
+                                {{ form.directions }}
+                            </div>
+                        {% endfor %}
+                    </tbody>
+                </table> 
+            </fieldset>
+            {% comment %} {{ ingredient_form }} {% endcomment %}
+            {% comment %} 
+            {{ patient_form }} {% endcomment %}
+            <input type="submit" value="Add Formula" class="submit" />
+        </form>
+    </div> 
+
+    
+
+    {% include "patientdb/container_end.html" %}
+
+    
+
+{% endblock content %}
+
+{% block inlineformsetjs %}
+    {% load static %}
+    <script src="{% static 'js/jquery.formset.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready($(function() {
+            $(".inline.{{ ingredient_form.prefix }}").formset({
+                prefix: "{{ ingredient_form.prefix }}",
+                addText: "Add another ingredient",
+                deleteText: "Remove",
+                formCssClass: 'dynamic-formset1',
+                added: addIEvent,
+                removed: removeIEvent,
+            });
+            $(".inline.{{ patient_form.prefix }}").formset({
+                prefix: "{{ patient_form.prefix }}",
+                addText: "Add another patient",
+                deleteText: "Remove",
+                formCssClass: 'dynamic-formset2',
+            });
+            
+            /* we must add an event to each dynamically created input field */
+            /* as once the dom is created, events are not added to dynamically created elements */
+            /* Calculate the total value of the formula with this dynamically added element included */
+            function addIEvent(row) {
+                var formulatype = $("select[id*='formula_type']").val();
+                var lastform = $("input[type='hidden'][id='id_formulaherbitem_set-TOTAL_FORMS']").val();
+                lastform = lastform - 1;
+                var idlast = 'id_formulaherbitem_set-'+ lastform + '-quantity';
+                var getid = $('#' + idlast);
+                  
+                switch(formulatype) {
+                        case "M":
+                            getid.attr({max: 10.0, min: 0.25, step: 0.25});
+                            if (getid.next().is('span')) {
+                                getid.next().replaceWith("<span>mls</span>");
+                            } else {
+                                    getid.after("<span>mls</span>");
+                            }
+                            break;
+                        case "D":
+                            getid.attr({max: 50, min: 1.0, step: 1.0});
+                            if (getid.next().is('span')) {
+                                getid.next().replaceWith("<span>drops</span>");
+                            } else {
+                                    getid.after("<span>drops</span>");
+                            }
+                            break;
+                        case "P":
+                            getid.attr({max: 100, min: 5.0, step: 5.0});
+                            if (getid.next().is('span')) {
+                                getid.next().replaceWith("<span>%</span>");
+                            } else {
+                                    getid.after("<span>%</span>");
+                            }
+                            break;
+                        case "T":
+                            getid.attr({max: 100, min: 5.0, step: 5.0});
+                            if (getid.next().is('span')) {
+                                getid.next().replaceWith("<span>mls</span>");
+                            } else {
+                                    getid.after("<span>mls</span>");
+                            }
+                            break;
+                        default:
+                            getid.attr({max: 10.0, min: 0.25, step: 0.25});
+                            if (getid.next().is('span')) {
+                                getid.next().replaceWith("<span>mls</span>");
+                            } else {
+                                getid.after("<span>mls</span>");
+                            }
+                            break;
+                    };
+                };
+                /* attach event for input field change */
+                
+                row.on('input', function() {
+                    total = 0.00;
+                    $("input[type='number'][id*='formulaherbitem']").each(function() {
+                        if ($.isNumeric($(this).val())) {
+                            total = parseFloat(total) + parseFloat($(this).val());
+                        };
+                    });
+                    $("span[id*='displaytotal']").text(total);                    
+                }); 
+                return;
+            };
+
+            /* we must recalculate totals when input line is removed */
+            /* subtracting from the total displayed .. don't delete this event handler */
+            function removeIEvent(row) {
+                total = 0.00;
+                $("input[type='number'][id*='formulaherbitem']").each(function() {
+                    if ($.isNumeric($(this).val())) {
+                        total = parseFloat(total) + parseFloat($(this).val());
+                    };
+                });
+                $("span[id*='displaytotal']").text(total); 
+                return;
+            };
+
+        }));
+    </script>
+    <script type="text/javascript">
+         $(document).ready($(function() {
+            /* event for change to formula type field added */
+            $("select[id*='formula_type']").change(function() {
+                /* check type of formula being prepared */
+                var formulatype = $(this).val();
+                /* set total back to zero */
+                $("span[id*='displaytotal']").text('0.0');
+                /* check input elements with id containing 'formulaherbitem' which is quantity input */
+                $("input[type='number'][id*='formulaherbitem']").each(function() {
+                    $(this).val("");
+                    switch(formulatype) {
+                        case "M":
+                            $(this).attr({max: 10.0, min: 0.25, step: 0.25});
+                            if ($(this).next().is('span')) {
+                                $(this).next().replaceWith("<span>mls</span>");
+                            } else {
+                                    $(this).after("<span>mls</span>");
+                            }
+                            break;
+                        case "D":
+                            $(this).attr({max: 50, min: 1.0, step: 1.0});
+                            if ($(this).next().is('span')) {
+                                $(this).next().replaceWith("<span>drops</span>");
+                            } else {
+                                    $(this).after("<span>drops</span>");
+                            }
+                            break;
+                        case "P":
+                            $(this).attr({max: 100, min: 5.0, step: 5.0});
+                            if ($(this).next().is('span')) {
+                                $(this).next().replaceWith("<span>%</span>");
+                            } else {
+                                    $(this).after("<span>%</span>");
+                            }
+                            break;
+                        case "T":
+                            $(this).attr({max: 100, min: 5.0, step: 5.0});
+                            if ($(this).next().is('span')) {
+                                $(this).next().replaceWith("<span>mls</span>");
+                            } else {
+                                    $(this).after("<span>mls</span>");
+                            }
+                            break;
+                        default:
+                            $(this).attr({max: 10.0, min: 0.25, step: 0.25});
+                            if ($(this).next().is('span')) {
+                                $(this).next().replaceWith("<span>mls</span>");
+                            } else {
+                                    $(this).after("<span>mls</span>");
+                            }
+                            break;
+                    };
+                });
+            });
+
+            /* trigger formulatype change initially to add formula type detail to the form */
+            $("select[id*='formula_type']").trigger('change');
+
+            /* event for input change - change totals when input fields are changed */
+            $("input[type='number'][id*='formulaherbitem']").on('input', function() {
+                total = 0.00;
+                $("input[type='number'][id*='formulaherbitem']").each(function() {
+                    if ($.isNumeric($(this).val())) {
+                        total = parseFloat(total) + parseFloat($(this).val());
+                    };
+                });
+                $("span[id*='displaytotal']").text(total);
+            }); 
+
+         }));
+         
+    </script>
+{% endblock inlineformsetjs %}
